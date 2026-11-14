@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bito ❤️ Kuntala | Our Love Story</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg,#fff0f5,#ffd6e5,#ffe4ec);
+  color: #8b1745;
+  text-align: center;
+}
+
+header {
+  padding: 65px 15px 45px;
+  background: linear-gradient(135deg,#e83e75,#9d174d);
+  color: white;
+  border-radius: 0 0 35px 35px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin: 15px;
+}
+
+.heart {
+  font-size: 45px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  50% {transform: scale(1.25);}
+}
+
+section {
+  padding: 35px 15px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #bd245b;
+}
+
+.message,.song-box {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  line-height: 1.9;
+  box-shadow: 0 5px 20px #d98ca944;
+}
+
+.date {
+  font-size: 23px;
+  font-weight: bold;
+  color: #d62968;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 13px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px #a33b5b44;
+}
+
+button {
+  background: linear-gradient(135deg,#ed397b,#a91651);
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-size: 17px;
+  cursor: pointer;
+  margin: 15px;
+}
+
+iframe {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 16/9;
+  border: none;
+  border-radius: 14px;
+}
+
+#player {
+  display: none;
+  margin-top: 20px;
+}
+
+footer {
+  background: #9d174d;
+  color: white;
+  padding: 30px;
+  border-radius: 25px 25px 0 0;
+}
+
+@media(max-width:400px) {
+  header h1 {font-size:29px;}
+  .gallery img {height:210px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="heart">❤️</div>
+  <h1>Bito ❤️ Kuntala</h1>
+  <p>Welcome To Our Little Love Story</p>
+  <p>Two Hearts, One Beautiful Beginning</p>
+
+  <button onclick="startLove()">
+    ❤️ Start Our Love Story
+  </button>
+
+  <div id="player">
+    <p>🎵 Our Special Song</p>
+    <iframe
+      id="youtube"
+      src=""
+      title="Bito and Kuntala special song"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</header>
+
+<section>
+  <h2>💗 Our Beginning</h2>
+  <div class="message">
+    <p>Every beautiful story has a beginning...</p>
+    <br>
+    <p class="date">29 October 2026</p>
+    <br>
+    <p>The day Bito and Kuntala started
+    their beautiful journey together.</p>
+    <br>
+    <p>Our story is just beginning. ❤️</p>
+  </div>
+</section>
+
+<section>
+  <h2>📸 Our Beautiful Memories</h2>
+
+  <div class="gallery">
+    <img src="https://i.ibb.co/3ycfhSkt/IMG-20261031-WA0013.jpg" alt="Memory 1">
+    <img src="https://i.ibb.co/4zk9VS3/file-00000000291c8208ab87964e12983e6e.png" alt="Memory 2">
+    <img src="https://i.ibb.co/jZ1RmhcX/file-00000000fbc082119c4a145e323316d0.png" alt="Memory 3">
+    <img src="https://i.ibb.co/prLC1Gkt/file-0000000063f48208a6b17473a31c1cbd.png" alt="Memory 4">
+  </div>
+</section>
+
+<section>
+  <h2>🎵 Our Special Song</h2>
+  <div class="song-box">
+    <p>One song, countless feelings ❤️</p>
+    <p>Bito ❤️ Kuntala</p>
+    <button onclick="startLove()">▶ Play Our Song</button>
+    <p><small>Tap to start the music</small></p>
+  </div>
+</section>
+
+<section>
+  <h2>💌 A Little Message</h2>
+  <div class="message">
+    <p>Dear Kuntala ❤️</p>
+    <br>
+    <p>I don't know how our story will be written
+    in the future, but I am happy that you
+    are a part of my present.</p>
+    <br>
+    <p>Let's make more beautiful memories together.</p>
+    <br>
+    <h3>With Love, Bito ❤️</h3>
+  </div>
+</section>
+
+<section>
+  <div class="heart">💕</div>
+  <h2>Bito & Kuntala</h2>
+  <p>Our Little Beginning – 29.10.2026</p>
+  <br>
+  <p>Made With Love ❤️</p>
+</section>
+
+<footer>
+  <p>Forever a beautiful memory 💗</p>
+  <p>Bito ❤️ Kuntala</p>
+</footer>
+
+<script>
+let songStarted = false;
+
+function startLove() {
+  const player = document.getElementById("player");
+  const youtube = document.getElementById("youtube");
+
+  player.style.display = "block";
+
+  if (!songStarted) {
+    youtube.src =
+      "https://www.youtube.com/embed/kq19ZFnmze8?autoplay=1&playsinline=1";
+    songStarted = true;
+  }
+
+  player.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+</script>
+
+</body>
+</html>
